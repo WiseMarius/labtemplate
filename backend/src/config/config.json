@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "xxcfubeg",
-    "password": "gQPxg-IoszCT9Ca2HlWDf4z97H5cloRr",
-    "database": "xxcfubeg",
-    "host": "horton.elephantsql.com",
-    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "devdb",
+    "host": "0.0.0.0",
+    "port": 32768,
     "dialect": "postgres"
   },
   "production": {
