@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../service/index';
+import {ButtonModule} from 'primeng/primeng'
+import {InputTextModule} from 'primeng/primeng'
+import {PasswordModule} from 'primeng/primeng';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
 
+  onClick()
+  {
+
+  }
+
 }
+  interface User{
+    username: string, 
+    password: string, 
+    email: string, 
+    name: string, 
+    surname: string    
+  }

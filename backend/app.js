@@ -11,6 +11,8 @@ var cors = require('cors');
 // Init
 var app = express();
 
+app.listen(8000);
+
 app.use(helmet());
 app.use(cors());
 
@@ -25,8 +27,12 @@ app.use(cookieParser());
 // Controllers
 var index = require('./src/rest/index');
 var user = require('./src/rest/user');
+var photo = require('./src/rest/photo');
+var status = require('./src/rest/status');
 app.use('/api', index);
 app.use('/api/user', user);
+app.use('/api/status', status);
+app.use('/api/photo', photo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

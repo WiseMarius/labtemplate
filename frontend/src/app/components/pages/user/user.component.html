@@ -1,14 +1,31 @@
-<p>
-  user works!
-</p>
-<form>
-  Username:
-  <br>
-  <input type="text" name="username">
-  <br> Password:
-  <br>
-  <input type="text" name="password">
-  <br>
+<div class="ui-g">
+  <div class="ui-g-2 ui-md-8">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">Username</span>
+      <input type="text" pInputText placeholder="johndoe">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">Password</span>
+      <input type="password" pPassword>
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">Email</span>
+      <input type="text" pInputText placeholder="johndoe@gmail.com">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">Name</span>
+      <input type="text" pInputText placeholder="John">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">Surname</span>
+      <input type="text" pInputText placeholder="Doe">
+    </div>
 
-</form>
-<button type="button"> Register! </button>
+    <br>
+    <button pButton type="button" (click)="onclick()" label="Register"></button>
+  </div>
+</div>
