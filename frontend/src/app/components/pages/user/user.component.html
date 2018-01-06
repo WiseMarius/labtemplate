@@ -176,41 +176,41 @@
 								<div class="field">
 									<label>Username</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="Username">
+										<input type="text" placeholder="Username" #registerUsername>
 										<i class="user icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>Password</label>
 									<div class="ui small left icon input">
-										<input type="password">
+										<input type="password" #registerPassword>
 										<i class="lock icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>E-Mail</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="E-Mail">
+										<input type="text" placeholder="E-Mail" #registerEmail>
 										<i class="mail icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>Name</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="Name">
+										<input type="text" placeholder="Name" #registerName>
 										<i class="user icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>Surname</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="Surname">
+										<input type="text" placeholder="Surname" #registerSurname>
 										<i class="user icon"></i>
 									</div>
 								</div>
 							</div>
 							<br>
-							<div class="ui right labeled icon blue button">
+							<div class="ui right labeled icon blue button" (click)="registerUser(registerUsername.value,registerPassword.value, registerEmail.value, registerName.value, registerSurname.value)">
 								<i class="signup icon"></i>
 								Register
 							</div>
