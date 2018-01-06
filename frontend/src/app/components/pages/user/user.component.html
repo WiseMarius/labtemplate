@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html>
 <style>
 	body {
 		background-color: #FFCDC0;
@@ -140,10 +143,12 @@
 					<h2 class="ui medium header">You can become as popular as your dream celebrities.</h2>
 				</div>
 
+
 				<!--LOGIN FORM-->
-				<div class="row">
+				<div class="row form">
 					<div class="ui four wide column">
 						<div class="ui ribbon label pink">
+
 							<div class="ui form">
 								<div class="field">
 									<label>Username</label>
@@ -161,7 +166,12 @@
 								</div>
 							</div>
 							<br>
-							<div class="ui right labeled icon blue submit button">
+
+							<p-dialog header="Title" [(visible)]="loginDialog">
+									Content
+							</p-dialog>
+
+							<div class="ui right labeled icon blue submit button" (click)="showLoginDialog()">
 								<i class="right arrow icon"></i>
 								Login
 							</div>
@@ -222,3 +232,5 @@
 	</div>
 	<hr>
 </body>
+
+</html>

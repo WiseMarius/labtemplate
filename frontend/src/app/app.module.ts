@@ -26,7 +26,7 @@ import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
 import { UserComponent } from './components/pages/user/user.component';
-
+import {DialogModule} from 'primeng/primeng'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +50,7 @@ import { UserComponent } from './components/pages/user/user.component';
     ButtonModule,
     InputTextModule,
     ContextMenuModule,
+    DialogModule
   ],
   providers: [
     AppRoutingModule,

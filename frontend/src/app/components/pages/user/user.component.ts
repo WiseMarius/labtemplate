@@ -13,6 +13,13 @@ export class UserComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
+  loginDialog: boolean = false;
+
+  showLoginDialog() {
+      this.loginDialog = true;
+  }
+
+
   ngOnInit() {
   }
 
