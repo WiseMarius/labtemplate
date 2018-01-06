@@ -31,11 +31,15 @@ export class HomeComponent implements OnInit {
     });
 
   }
+
+  ng
 }
 
 interface User {
   id: number;
-  firstName: string;
-  lastName: string;
+  username: string;
+  password: string;
   email: string;
+  name:string;
+  surname:string;
 }
