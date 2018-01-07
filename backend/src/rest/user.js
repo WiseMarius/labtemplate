@@ -4,6 +4,7 @@ var user = require('../service/').user;
 
 router.get('/', user.list);
 router.get('/:id', user.findById);
+router.get('/id/:username', user.findByUsername);
 router.post('/', user.create);
 // router.put('/:id',user.update);
 router.delete('/:id', user.delete);

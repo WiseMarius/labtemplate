@@ -3,6 +3,8 @@ import { ApiService } from '../../../service/index';
 import { ButtonModule } from 'primeng/primeng'
 import { InputTextModule } from 'primeng/primeng'
 import { PasswordModule } from 'primeng/primeng';
+import { URLSearchParams } from '@angular/http';
+import 'rxjs/add/operator/map'
 
 @Component({
   selector: 'app-user',
@@ -17,6 +19,9 @@ export class UserComponent implements OnInit {
 
   showLoginDialog() {
       this.loginDialog = true;
+      var x = new URLSearchParams();
+      x.set('surname','motr')
+      this.apiService.get('api/user/', x).subscribe(res=>{console.log(res)});
   }
 
 
@@ -34,5 +39,7 @@ export class UserComponent implements OnInit {
       console.log(res);
     });
   }
+
+  findUsername
 
 }
