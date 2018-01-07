@@ -27,11 +27,14 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
 import { UserComponent } from './components/pages/user/user.component';
 import {DialogModule} from 'primeng/primeng'
+import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    UserProfileComponent
   ],
   imports: [
     AppRoutingModule,
