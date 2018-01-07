@@ -1,7 +1,7 @@
-
 "use strict";
 
 const user = require('../models').user;
+const status = require('../models').status;
 
 exports.list = function (req, res) {
   user.findAll().then(user => {
@@ -29,7 +29,7 @@ exports.findById = function (req, res) {
 exports.findByUsername = function (req, res) {
   console.log("bbbbb");
   let username = req.params.username;
-  var x = user.findOne({where:{name:username}}).then(user => {
+  user.findOne({ where: { username: username } }).then(user => {
     console.log(user);
     if (!user) {
       return res.status(400).send({
@@ -38,6 +38,18 @@ exports.findByUsername = function (req, res) {
     }
     res.jsonp(user);
   });
+};
+
+exports.getStatusesByUsername = function (req, res) {
+  console.log("cccc");
+  let username=req.params.username;
+  user.findAll({where:{username:username}, include: [{ model: status}] }).then(user => {
+    console.log(user);
+    if (!user) {
+      return res.status(400).send({ message: 'User Not Found' });
+    }
+    res.jsonp(user);
+  })
 };
 
 exports.delete = function (req, res) {
