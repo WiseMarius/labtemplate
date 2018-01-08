@@ -1,6 +1,7 @@
 "use strict";
 
 const user = require('../models').user;
+const status = require('../models').status;
 
 exports.list = function (req, res) {
   user.findAll().then(user => {
@@ -13,6 +14,7 @@ exports.create = function (req, res) {
 };
 
 exports.findById = function (req, res) {
+  console.log("aaaa");
   let id = req.params.id;
   user.findById(id).then(user => {
     if (!user) {
@@ -22,6 +24,47 @@ exports.findById = function (req, res) {
     }
     res.jsonp(user);
   });
+};
+
+exports.findByUsername = function (req, res) {
+  console.log("bbbbb");
+  let username = req.params.username;
+  user.findOne({ where: { username: username } }).then(user => {
+    console.log(user);
+    if (!user) {
+      return res.status(400).send({
+        message: 'User Not Found',
+      });
+    }
+    res.jsonp(user);
+  });
+};
+
+exports.findByUsernameAndPassword = function (req, res) {
+  console.log("dddd");
+  let username = req.params.username;
+  let password = req.params.password;
+  user.findOne({ where: { username: username, password: password } }).then(user => {
+    console.log(user);
+    if (!user) {
+      return res.status(400).send({
+        message: 'User Not Found',
+      });
+    }
+    res.jsonp(user);
+  });
+};
+
+exports.getStatusesByUsername = function (req, res) {
+  console.log("cccc");
+  let username = req.params.username;
+  user.findAll({ where: { username: username }, include: [{ model: status }] }).then(user => {
+    console.log(user);
+    if (!user) {
+      return res.status(400).send({ message: 'User Not Found' });
+    }
+    res.jsonp(user);
+  })
 };
 
 exports.delete = function (req, res) {

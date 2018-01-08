@@ -1,14 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var status = sequelize.define('status', {
+  const status = sequelize.define('status', {
     status: DataTypes.STRING,
-    rating: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        models.status.BelongsTo(models.user)
-      }
-    }
+    rating: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   });
+
+  status.associate = (models) => {
+    //status.BelongsTo(models.user, { foreignKey: 'uid' });
+  }
+
   return status;
 };

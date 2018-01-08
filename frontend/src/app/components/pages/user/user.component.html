@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html>
 <style>
 	body {
 		background-color: #FFCDC0;
@@ -140,28 +143,35 @@
 					<h2 class="ui medium header">You can become as popular as your dream celebrities.</h2>
 				</div>
 
+
 				<!--LOGIN FORM-->
-				<div class="row">
+				<div class="row form">
 					<div class="ui four wide column">
 						<div class="ui ribbon label pink">
+
 							<div class="ui form">
 								<div class="field">
 									<label>Username</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="Username">
+										<input #loginUsername type="text" placeholder="Username">
 										<i class="user icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>Password</label>
 									<div class="ui small left icon input">
-										<input type="password">
+										<input #loginPassword type="password">
 										<i class="lock icon"></i>
 									</div>
 								</div>
 							</div>
 							<br>
-							<div class="ui right labeled icon blue submit button">
+
+							<p-dialog header="Login!" [(visible)]="loginDialog">
+									Te-ai logat!
+							</p-dialog>
+
+							<div (click)="loginUser(loginUsername.value, loginPassword.value)" class="ui right labeled icon blue submit button">
 								<i class="right arrow icon"></i>
 								Login
 							</div>
@@ -222,3 +232,5 @@
 	</div>
 	<hr>
 </body>
+
+</html>

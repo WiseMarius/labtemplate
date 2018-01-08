@@ -26,6 +26,7 @@ import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
 import { UserComponent } from './components/pages/user/user.component';
+import {DialogModule} from 'primeng/primeng'
 import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 
@@ -54,6 +55,7 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     ButtonModule,
     InputTextModule,
     ContextMenuModule,
+    DialogModule
   ],
   providers: [
     AppRoutingModule,
