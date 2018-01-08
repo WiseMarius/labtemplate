@@ -17,14 +17,14 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING
-      },name: {
-          allowNull: false,
-          type: Sequelize.STRING
-        },
-        surname: {
-          allowNull: false,
-          type: Sequelize.STRING
-        },
+      }, name: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      surname: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -50,9 +50,17 @@ module.exports = {
           {
             type: Sequelize.INTEGER
           },
+        createdAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        },
+        updatedAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        },
         uid: {
           type: Sequelize.INTEGER,
-          references: { model: 'users', key:'id' }
+          references: { model: 'users', key: 'id' }
         }
       })
     }).then(function () {
@@ -72,9 +80,17 @@ module.exports = {
           {
             type: Sequelize.INTEGER
           },
+        createdAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        },
+        updatedAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        },
         uid: {
           type: Sequelize.INTEGER,
-          references: { model: 'users', key:'id' }
+          references: { model: 'users', key: 'id' }
         }
       })
     })

@@ -18,10 +18,19 @@ export class UserComponent implements OnInit {
   loginDialog: boolean = false;
 
   showLoginDialog() {
-      this.loginDialog = true;
-      var x = new URLSearchParams();
-      x.set('surname','motr')
-      this.apiService.get('api/user/', x).subscribe(res=>{console.log(res)});
+    this.loginDialog = true;
+  }
+
+  loginUser(username, password) {
+    var user = { username, password };
+    //console.log(JSON.stringify(user));
+    try {
+      this.apiService.get('api/user/username_password/' + user.username + '&' + user.password).subscribe(res => {
+        this.showLoginDialog();
+      });
+    }
+    catch (e) {
+    }
   }
 
 
@@ -34,12 +43,10 @@ export class UserComponent implements OnInit {
     //console.log(x);
     //var s=JSON.stringify(x);
     //console.log(s);
-    var user={ username, password, email, name, surname };
+    var user = { username, password, email, name, surname };
     this.apiService.post('api/user/', user).subscribe(res => {
       console.log(res);
     });
   }
-
-  findUsername
 
 }

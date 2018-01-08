@@ -153,25 +153,25 @@
 								<div class="field">
 									<label>Username</label>
 									<div class="ui small left icon input">
-										<input type="text" placeholder="Username">
+										<input #loginUsername type="text" placeholder="Username">
 										<i class="user icon"></i>
 									</div>
 								</div>
 								<div class="field">
 									<label>Password</label>
 									<div class="ui small left icon input">
-										<input type="password">
+										<input #loginPassword type="password">
 										<i class="lock icon"></i>
 									</div>
 								</div>
 							</div>
 							<br>
 
-							<p-dialog header="Title" [(visible)]="loginDialog">
-									Content
+							<p-dialog header="Login!" [(visible)]="loginDialog">
+									Te-ai logat!
 							</p-dialog>
 
-							<div class="ui right labeled icon blue submit button" (click)="showLoginDialog()">
+							<div (click)="loginUser(loginUsername.value, loginPassword.value)" class="ui right labeled icon blue submit button">
 								<i class="right arrow icon"></i>
 								Login
 							</div>
