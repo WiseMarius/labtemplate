@@ -1,0 +1,62 @@
+.vertical-list span {
+    background-color: #eee; /* Grey background color */
+    display: block; /* Make the links appear below each other */
+    padding: 1px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    background:  #ebc1b7;
+    width: 150px;
+}
+
+ ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background:  #ebc1b7;
+    opacity: 0.5;
+}
+
+#horizontal{
+    list-style-type: none;
+}
+
+#vertical{
+    display:block;
+}
+
+li {
+    float: left;
+}
+
+li a, p {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+li a:hover, p:hover {
+    background-color: #e9a998;
+    animation: blink 1s infinite;	
+}
+
+.vertical-list:hover{
+    background-color: #e9a998;
+    animation: dance 1s infinite;	
+}
+
+@keyframes blink 
+{  
+ 0% { background-color: #e9a998; }
+ 50% { background-color: #e78064; }
+ 100% { background-color: #e9a998; }
+}
+
+@keyframes dance 
+{  
+ 0% { padding-left: 0%; }
+ 50% { padding-left: 50%; }
+ 100% { padding-left: 0%; }
+}
