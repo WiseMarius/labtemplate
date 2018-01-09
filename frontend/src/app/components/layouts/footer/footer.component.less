@@ -1,31 +1,43 @@
+.vertical-list
+{
+    position: relative;
+
+}
+
 .vertical-list span {
     background-color: #eee; /* Grey background color */
     display: block; /* Make the links appear below each other */
     padding: 1px; /* Add some padding */
     text-decoration: none; /* Remove underline from links */
     background:  #ebc1b7;
-    width: 150px;
+    font-size: 8px;
 }
 
- ul{
+.vertical-list h5{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 10px;
+}
+
+ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background:  #ebc1b7;
     opacity: 0.5;
-}
-
-#horizontal{
-    list-style-type: none;
-}
-
-#vertical{
-    display:block;
+    display:table;
+    width: 100%;
 }
 
 li {
     float: left;
+    width: auto;
+    display:table-cell;
+    width:25%;
+    min-width: 150px;
+    text-align: center;
 }
 
 li a, p {
@@ -37,12 +49,12 @@ li a, p {
 }
 
 
-li a:hover, p:hover {
-    background-color: #e9a998;
-    animation: blink 1s infinite;	
-}
+// li a:hover, p:hover {
+//     background-color: #e9a998;
+//     animation: blink 1s infinite;	
+// }
 
-.vertical-list:hover{
+.vertical-list span:hover{
     background-color: #e9a998;
     animation: dance 1s infinite;	
 }
@@ -56,7 +68,7 @@ li a:hover, p:hover {
 
 @keyframes dance 
 {  
- 0% { padding-left: 0%; }
- 50% { padding-left: 50%; }
- 100% { padding-left: 0%; }
+    0% { font-size: 8px; }
+    50% { font-size: 10px; }
+    100% { font-size: 8px; }
 }
