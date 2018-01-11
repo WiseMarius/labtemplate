@@ -1,52 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../service/index';
-import { ButtonModule } from 'primeng/primeng'
-import { InputTextModule } from 'primeng/primeng'
-import { PasswordModule } from 'primeng/primeng';
-import { URLSearchParams } from '@angular/http';
-import 'rxjs/add/operator/map'
+import {Component} from '@angular/core';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.less']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
+  closeResult: string;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private modalService: NgbModal) {}
 
-  loginDialog: boolean = false;
-
-  showLoginDialog() {
-    this.loginDialog = true;
-  }
-
-  loginUser(username, password) {
-    var user = { username, password };
-    //console.log(JSON.stringify(user));
-    try {
-      this.apiService.get('api/user/username_password/' + user.username + '&' + user.password).subscribe(res => {
-        this.showLoginDialog();
-      });
-    }
-    catch (e) {
-    }
-  }
-
-
-  ngOnInit() {
-  }
-
-  registerUser(username, password, email, name, surname) {
-    //var user={username:username, password:password, email:email, name:name, surname:surname}
-    //console.log("SUNT IN REGISTER USER");
-    //console.log(x);
-    //var s=JSON.stringify(x);
-    //console.log(s);
-    var user = { username, password, email, name, surname };
-    this.apiService.post('api/user/', user).subscribe(res => {
-      console.log(res);
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
 
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
 }

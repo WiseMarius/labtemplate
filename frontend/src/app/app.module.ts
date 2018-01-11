@@ -17,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components';
 
+//Ng-bootstrap
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 // used to create fake backend
 import { fakeBackendProvider } from './service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -55,7 +58,8 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     ButtonModule,
     InputTextModule,
     ContextMenuModule,
-    DialogModule
+    DialogModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AppRoutingModule,
