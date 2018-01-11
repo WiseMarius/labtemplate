@@ -32,6 +32,8 @@ import { UserComponent } from './components/pages/user/user.component';
 import {DialogModule} from 'primeng/primeng'
 import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
+import { RegisterButtonComponent } from './components/layouts/register-button/register-button.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     HomeComponent,
     UserComponent,
     UserProfileComponent,
-    FooterComponent
+    FooterComponent,
+    LoginButtonComponent,
+    RegisterButtonComponent
   ],
   imports: [
     AppRoutingModule,

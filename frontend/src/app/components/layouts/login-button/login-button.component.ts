@@ -3,11 +3,11 @@ import {Component} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.less']
+  selector: 'login-button',
+  templateUrl: './login-button.component.html',
+  styleUrls: ['./login-button.component.less']
 })
-export class UserComponent {
+export class LoginButtonComponent {
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}
