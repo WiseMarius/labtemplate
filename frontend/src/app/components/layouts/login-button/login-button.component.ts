@@ -1,6 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { ApiService } from '../../../service/index';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router, RouterModule } from '@angular/router';
+
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'login-button',
@@ -10,16 +14,28 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class LoginButtonComponent {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
+
+  constructor(private apiService: ApiService, private modalService: NgbModal, private route: Router) { }
+
+
+  login(loginUsername, loginPassword) {
+    this.apiService.get('api/user/username_password/' + loginUsername + '&' + loginPassword).subscribe(res => {
+      console.log(res);
+      if (res != '404')
+        this.route.navigateByUrl('/user-profile');
+        console.log("haha");
+    });
+  }
+
 
   open(content) {
-    this.modalService.open(content).result.then((result) =>
-    {
+    this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
-    }, (reason) =>
-    {
+    }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
+
   }
 
   private getDismissReason(reason: any): string {
@@ -28,7 +44,7 @@ export class LoginButtonComponent {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 }

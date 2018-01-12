@@ -5,14 +5,14 @@
     </div>
     <div class="modal-body">
         <div class="login-input">
-            <input id="login_username" class="form-control" type="text" placeholder="Username" required>
+            <input #loginUsername id="login_username" class="form-control" type="text" placeholder="Username" required>
         </div>
         <div class="login-input">
-            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+            <input #loginPassword id="login_password" class="form-control" type="password" placeholder="Password" required>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" (click)="c('Close click')">Login</button>
+        <button type="button" class="btn btn-outline-success" (click)="login(loginUsername.value, loginPassword.value)">Login</button>
         <button type="button" class="btn btn-outline-danger" (click)="c('Close click')">Close</button>
     </div>
 </ng-template>
