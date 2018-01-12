@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   user.associate = (models) => {
     user.hasMany(models.status, { foreignKey: 'uid' });
+    user.belongsToMany(user, {as:'friends',  through:'userFriends', foreignKey:'u1id', otherKey:'u2id'})
     //user.hasMany(models.photo, {foreignKey:'uid'});
   }
 
