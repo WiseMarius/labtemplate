@@ -17,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components';
 
+//Ng-bootstrap
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 // used to create fake backend
 import { fakeBackendProvider } from './service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -29,6 +32,9 @@ import { UserComponent } from './components/pages/user/user.component';
 import {DialogModule} from 'primeng/primeng'
 import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
+import { RegisterButtonComponent } from './components/layouts/register-button/register-button.component';
+import { LoginNotificationComponent } from './components/layouts/login-notification/login-notification.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,10 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     HomeComponent,
     UserComponent,
     UserProfileComponent,
-    FooterComponent
+    FooterComponent,
+    LoginButtonComponent,
+    RegisterButtonComponent,
+    LoginNotificationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -55,7 +64,8 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     ButtonModule,
     InputTextModule,
     ContextMenuModule,
-    DialogModule
+    DialogModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AppRoutingModule,
