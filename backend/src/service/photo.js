@@ -24,6 +24,17 @@ exports.findById = function (req, res) {
   });
 };
 
+exports.findRatingByPhoto=function(req,res){
+  let photo=req.params.id;
+  photo.findOne({attributes:['rating'], where:{photo:photo}}).then(photo=>{
+    console.log(photo);
+    if(!photo){
+      return res.status(400).send({message:'Photo Not Found'});
+    }
+    res.jsonp(photo);
+  })
+}
+
 exports.delete = function (req, res) {
   let id = req.params.id;
   photo.findById(req.params.id)
@@ -40,3 +51,9 @@ exports.delete = function (req, res) {
     })
     .catch(error => res.status(400).send(error));
 };
+
+exports.update= function(req, res){
+  console.log("lllll");
+  let id=req.params.id;
+  console.log(id);
+}

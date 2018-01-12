@@ -16,6 +16,7 @@ exports.create = function (req, res) {
 exports.findById = function (req, res) {
   console.log("aaaa");
   let id = req.params.id;
+  console.log(id);
   user.findById(id).then(user => {
     if (!user) {
       return res.status(400).send({
@@ -60,7 +61,7 @@ exports.getFriends = function (req, res) {
   let username = req.params.username;
   user.findAll({
     where: { username: username },
-    include: [{ model: user , as:'friends'}]
+    include: [{ model: user, as: 'friends' }]
   }).then(user => {
     console.log(user);
     if (!user) {
@@ -89,7 +90,7 @@ exports.getStatusesByUsername = function (req, res) {
 
 exports.delete = function (req, res) {
   let id = req.params.id;
-  user.findById(req.params.id)
+  user.findById(id)
     .then(user => {
       if (!user) {
         return res.status(400).send({
@@ -102,4 +103,9 @@ exports.delete = function (req, res) {
         .catch(error => res.status(400).send(error));
     })
     .catch(error => res.status(400).send(error));
+};
+
+exports.update = function (res, req) {
+  let id = req.params.id;
+  console.log(id);
 };
