@@ -34,6 +34,7 @@ import { UserProfileComponent } from './components/pages/user-profile/user-profi
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
 import { RegisterButtonComponent } from './components/layouts/register-button/register-button.component';
+import { LoginNotificationComponent } from './components/layouts/login-notification/login-notification.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RegisterButtonComponent } from './components/layouts/register-button/re
     UserProfileComponent,
     FooterComponent,
     LoginButtonComponent,
-    RegisterButtonComponent
+    RegisterButtonComponent,
+    LoginNotificationComponent
   ],
   imports: [
     AppRoutingModule,
