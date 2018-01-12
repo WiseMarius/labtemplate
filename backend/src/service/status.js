@@ -1,6 +1,7 @@
 "use strict";
 
 const status = require('../models').status;
+const user=require('../models').user;
 
 exports.list = function (req, res) {
   status.findAll().then(status => {

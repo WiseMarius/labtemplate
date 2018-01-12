@@ -93,6 +93,33 @@ module.exports = {
           references: { model: 'users', key: 'id' }
         }
       })
+    }).then(function () {
+      queryInterface.createTable('userFriends', {
+        id: {
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+          type: Sequelize.INTEGER
+        },
+        u1id:
+          {
+            allowNull: false,
+            type: Sequelize.INTEGER
+          },
+        u2id:
+          {
+            allowNull: false,
+            type: Sequelize.INTEGER
+          },
+        createdAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        },
+        updatedAt: {
+          allowNull: false,
+          type: Sequelize.DATE
+        }
+      })
     })
   },
   down: (queryInterface, Sequelize) => {

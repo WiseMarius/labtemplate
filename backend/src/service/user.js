@@ -55,10 +55,30 @@ exports.findByUsernameAndPassword = function (req, res) {
   });
 };
 
+exports.getFriends = function (req, res) {
+  console.log("eeee");
+  let username = req.params.username;
+  user.findAll({
+    where: { username: username },
+    include: [{ model: user , as:'friends'}]
+  }).then(user => {
+    console.log(user);
+    if (!user) {
+      return res.status(400).send({ message: 'User Not Found' });
+    }
+    res.jsonp(user);
+  })
+};
+
 exports.getStatusesByUsername = function (req, res) {
   console.log("cccc");
   let username = req.params.username;
-  user.findAll({ where: { username: username }, include: [{ model: status }] }).then(user => {
+  user.findAll({
+    attributes: ['name', 'surname'],
+    where: { username: username },
+    include: [{ model: status }],
+    order: [[status, 'createdAt', 'DESC']]
+  }).then(user => {
     console.log(user);
     if (!user) {
       return res.status(400).send({ message: 'User Not Found' });
