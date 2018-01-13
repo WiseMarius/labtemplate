@@ -1,5 +1,16 @@
 <div class="row">
-    <div class="col-md-8 ">
+    <div class="col-md-12 ">
+        <div class="form-group">
+            <h5>How do you feel today?</h5>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: #f4e9e9"></textarea>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event">Express your feelings with an image</button>
+            <button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event">Upload your thoughts</button>
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12">
         <!-- Latest image, you can add here a Snapwidget to put your actual instagram feed -->
         <img src="../../../../assets/images/capuccino.jpg " width="100% ">
 
@@ -14,36 +25,5 @@
             </li>
         </ul>
 
-    </div>
-
-    <div class="col-md-4 ">
-        <h4><a>Recent Comments(6)</a></h4>
-        <p>★<i class="fa fa-star " aria-hidden="true "> 23 people liked your picture</i></p>
-        <h5><a>Sara Blestow</a></h5>
-        <p>★★★★★</p>
-        <p>Omgggg! So beautiful! I can't believe you still have it!</p>
-        <br>
-        <h5><a>Jackie Holmes</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Roman Benitez</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Balvin Jay</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Jackie Curtis</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Jackie Curtis</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Jackie Curtis</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-        <br>
-        <h5><a>Jackie Curtis</a></h5>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-
-        <!-- Right column -->
     </div>
 </div>
