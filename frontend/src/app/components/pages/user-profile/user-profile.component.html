@@ -11,155 +11,17 @@
     <app-login-notification></app-login-notification>
     <!-- Page Content -->
     <div class="container">
-        <!-- Profile image, use a square image for best performance -->
-        <div class="row">
-            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
-                <!-- INSERT IMAGE HERE -->
-                <img src="../../../../assets/images/oval.jpg" class="profile">
-            </div>
-            <!-- Name, tagline, score -->
-            <div class="col-xl-5 col-lg-4 col-md-5 col-sm-8">
-                <h1>Lacie Pound</h1>
-                <div class="rating-label">
-                    <p class="rating-tag">4.63</p>
-                    <div class="prime-tag">
-                        <p style="margin: 0px; font-size: 10px; letter-spacing: 3px; font-weight: bold">PRIME</p>
-                        <p style="font-size: 16px;">USER</p>
-                    </div>
-                </div>
-                <a class="btn btn-default" href="#"><i class="fa fa-facebook"></i></a>
-                <a class="btn btn-default" href="#"><i class="fa fa-instagram"></i></a>
-                <a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a>
-                <a class="btn btn-default" href="#"><i class="fa fa-google-plus"></i></a>
-            </div>
+        <app-header></app-header>
 
-            <!--Top right column-->
-            <div class="col-xl-3 col-lg-3 col-md-4">
-                <br>
-                <a class="btn btn-default" href="#">Single</a><br>
-                <a class="btn btn-default" href="#">Lives in Paris</a><br>
-                <a class="btn btn-default" href="#">Currently working at Hodicker</a><br>
-            </div>
-
-            <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12">
-                <h5> Search </h5>
-
-                <div class="container">
-                    <div class="row">
-                        <div id="imaginary_container" style="width: 100%;">
-                            <div class="input-group stylish-input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">
-                                            <button type="submit">
-                                                <span class="fa fa-search"></span>
-                                </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="horizontal-list">
-                    <h4> TRENDING </h4>
-                    <span style="min-width: 100px; width: 49%">
-                            <h5><a>Jessica Dahammer</a></h5>
-                            <p class="comment ">Loss of 20lbs, whoop</p>
-                            <h6>56 People rated this 5 stars</h6>
-                    </span>
-
-                    <span style="min-width: 100px; width: 49% ">
-                        <h5><a>Marius</a></h5>
-                        <p class="comment ">Salut Radu!</p>
-                        <h6>56 People rated this 5 stars</h6>
-                    </span>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-        <div class="row ">
-            <div class="col-md-10 ">
-                <div class="horizontal-list ">
-                    <span><a href="# ">Home</a></span>
-                    <span><a href="# ">Moments</a></span>
-                    <span><a href="# ">Photos</a></span>
-                    <span><a href="# ">Rated</a></span>
-                    <span><a href="# ">Friends</a></span>
-                </div>
-                <hr>
-            </div>
-        </div>
+        <app-menu></app-menu>
 
         <!-- Content Row -->
         <div class="row ">
-            <div class="col-md-6 ">
-                <!-- Latest image, you can add here a Snapwidget to put your actual instagram feed -->
-                <img src="../../../../assets/images/capuccino.jpg " width="100% ">
-
-                <!--Content, you could put this as a CV sort of thing -->
-                <h3><a>Ready for the Gala Tonight!</a></h3>
-                <h6>3 min. ago - 56 People rated this 5 stars</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-
-                <h3><a>Thank you for your wishes</a></h3>
-                <h6>3 min. ago - 56 People rated this 5 stars</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-
-                <h3><a>Remembering Cabo</a></h3>
-                <h6>3 min. ago - 56 People rated this 5 stars</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-            </div>
-
-            <div class="col-md-4 ">
-                <h4><a>Recent Comments(6)</a></h4>
-                <p>★<i class="fa fa-star " aria-hidden="true "> 23 people liked your picture</i></p>
-                <h5><a>Sara Blestow</a></h5>
-                <p>★★★★★</p>
-                <p>Omgggg! So beautiful! I can't believe you still have it!</p>
-                <br>
-                <h5><a>Jackie Holmes</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Roman Benitez</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Balvin Jay</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Jackie Curtis</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Jackie Curtis</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Jackie Curtis</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-                <br>
-                <h5><a>Jackie Curtis</a></h5>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. " ★★★★★</p>
-
-                <!-- Right column -->
+            <div class="col-md-10">
+                <app-home-tab></app-home-tab>
             </div>
             <div class="col-md-2 ">
-                <h4> Highest Rated Posts </h4>
-                <h5><a>Jackie Curtis</a></h5>
-                <p class="comment ">"Lorem ipsum dolor sit amet, consectetur ad ipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. "</p>
-                <h6>56 People rated this 5 stars</h6>
-
-                <h5><a>Karl Jones</a></h5>
-                <p class="comment ">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. "</p>
-                <h6>56 People rated this 5 stars</h6>
-
-                <h5><a>Fernando Cortés</a></h5>
-                <p class="comment ">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. "</p>
-                <h6>56 People rated this 5 stars</h6>
-
-                <h5><a>Fernando Cortés</a></h5>
-                <p class="comment ">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. "</p>
-                <h6>56 People rated this 5 stars</h6>
-
-                <h5><a>Fernando Cortés</a></h5>
-                <p class="comment ">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. "</p>
-                <h6>56 People rated this 5 stars</h6>
+                <app-highest-rated></app-highest-rated>
             </div>
         </div>
         <!-- /.row -->

@@ -35,6 +35,10 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
 import { RegisterButtonComponent } from './components/layouts/register-button/register-button.component';
 import { LoginNotificationComponent } from './components/layouts/login-notification/login-notification.component';
+import { HomeTabComponent } from './components/layouts/home-tab/home-tab.component';
+import { HeaderComponent } from './components/layouts/header/header.component';
+import { MenuComponent } from './components/layouts/menu/menu.component';
+import { HighestRatedComponent } from './components/layouts/highest-rated/highest-rated.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { LoginNotificationComponent } from './components/layouts/login-notificat
     FooterComponent,
     LoginButtonComponent,
     RegisterButtonComponent,
-    LoginNotificationComponent
+    LoginNotificationComponent,
+    HomeTabComponent,
+    HeaderComponent,
+    MenuComponent,
+    HighestRatedComponent
   ],
   imports: [
     AppRoutingModule,
