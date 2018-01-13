@@ -1,18 +1,20 @@
 <div class="image-table">
-    <div *ngFor="let img of imagesArray; let i = index" style="display: inline; padding: auto; margin: auto">
-        <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Uploaded by: First Last Name">
-        <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}" (click)="openImageModal(img)" alt='{{img.description}}' />
-        <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}" (click)="openImageModal(img)" alt='{{img.description}}' />
-        <hr>
-        <ng-template #t let-fill="fill">
-          <span *ngIf="fill === 100" class="star full">&hearts;</span>
-        <span *ngIf="fill === 0" class="star">&hearts;</span>
-        <span *ngIf="fill < 100 && fill > 0" class="star">
-            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
-        </span>
-        </ng-template>
+    <div *ngFor="let img of photos; let i = index" style="display: inline; padding: auto; margin: auto">
+        <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Uploaded by: {{img.name}} {{img.surname}}">
+            <img *ngIf="img.thumb" class="list-img" src="{{img.photo.thumb}}" (click)="openImageModal(img.photo)" alt='{{img.photo.description}}'
+            />
+            <img *ngIf="!img.thumb" class="list-img" src="{{img.photo.img}}" (click)="openImageModal(img.photo)" alt='{{img.photo.description}}'
+            />
+            <hr>
+            <ng-template #t let-fill="fill">
+                <span *ngIf="fill === 100" class="star full">&hearts;</span>
+                <span *ngIf="fill === 0" class="star">&hearts;</span>
+                <span *ngIf="fill < 100 && fill > 0" class="star">
+                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                </span>
+            </ng-template>
 
-        <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+            <ngb-rating [(rate)]="img.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
         </button>
     </div>
 </div>

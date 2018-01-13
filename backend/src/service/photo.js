@@ -1,6 +1,7 @@
 "use strict";
 
 const photo = require('../models').photo;
+const user=require('../models').user;
 
 exports.list = function (req, res) {
   photo.findAll().then(photo => {
@@ -22,6 +23,17 @@ exports.findById = function (req, res) {
     }
     res.jsonp(photo);
   });
+};
+
+exports.getPhotosAndUsers = function (req, res) {
+  console.log("haha");
+  photo.findAll({
+    attributes: ['photo', 'rating'],
+    include: [{ model: user, attributes:['name', 'surname']}],
+    order: [['createdAt', 'DESC']]
+  }).then(photo=>{
+    res.jsonp(photo);
+  })
 };
 
 exports.findRatingByPhoto=function(req,res){

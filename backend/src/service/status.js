@@ -17,7 +17,8 @@ exports.getStatusAndUsers = function (req, res) {
   console.log("haha");
   status.findAll({
     attributes: ['status', 'rating'],
-    include: [{ model: user, attributes:['name', 'surname']}]
+    include: [{ model: user, attributes:['name', 'surname']}],
+    order: [['createdAt', 'DESC']]
   }).then(status=>{
     res.jsonp(status);
   })

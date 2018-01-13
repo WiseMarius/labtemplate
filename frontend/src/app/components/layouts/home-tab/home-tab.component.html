@@ -4,17 +4,16 @@
         <img src="../../../../assets/images/capuccino.jpg " width="100% ">
 
         <!--Content, you could put this as a CV sort of thing -->
-        <h3><a>Ready for the Gala Tonight!</a></h3>
-        <h6>3 min. ago - 56 People rated this 5 stars</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+        <ul>
+            <li *ngFor="let s of statuses let i = index">
+                <h3>
+                    <a>{{s.user.name}} {{s.user.surname}}</a>
+                </h3>
+                <h6>{{s.rating}}</h6>
+                <p>{{s.status}}</p>
+            </li>
+        </ul>
 
-        <h3><a>Thank you for your wishes</a></h3>
-        <h6>3 min. ago - 56 People rated this 5 stars</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-
-        <h3><a>Remembering Cabo</a></h3>
-        <h6>3 min. ago - 56 People rated this 5 stars</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
     </div>
 
     <div class="col-md-4 ">
