@@ -18,12 +18,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components';
 
 //Ng-bootstrap
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-//Modal gallery
+// Modal gallery
 import 'hammerjs';
 import 'mousetrap';
 import { ModalGalleryModule } from 'angular-modal-gallery';
+
+// File picker
+import { AngularFilePickerModule } from 'angular-file-picker';
 
 // used to create fake backend
 import { fakeBackendProvider } from './service';
@@ -34,7 +37,7 @@ import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
 import { UserComponent } from './components/pages/user/user.component';
-import {DialogModule} from 'primeng/primeng'
+import { DialogModule } from 'primeng/primeng'
 import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
@@ -95,7 +98,11 @@ import { UserFriendsComponent } from './components/pages/user-friends/user-frien
     ContextMenuModule,
     DialogModule,
     NgbModule.forRoot(),
-    ModalGalleryModule.forRoot()
+    ModalGalleryModule.forRoot(),
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AngularFilePickerModule
   ],
   providers: [
     AppRoutingModule,
