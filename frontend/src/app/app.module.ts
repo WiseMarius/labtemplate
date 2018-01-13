@@ -39,6 +39,8 @@ import { HomeTabComponent } from './components/layouts/home-tab/home-tab.compone
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { MenuComponent } from './components/layouts/menu/menu.component';
 import { HighestRatedComponent } from './components/layouts/highest-rated/highest-rated.component';
+import { UserMomentsComponent } from './components/pages/user-moments/user-moments.component';
+import { MomentsTabComponent } from './components/layouts/moments-tab/moments-tab.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { HighestRatedComponent } from './components/layouts/highest-rated/highes
     HomeTabComponent,
     HeaderComponent,
     MenuComponent,
-    HighestRatedComponent
+    HighestRatedComponent,
+    UserMomentsComponent,
+    MomentsTabComponent
   ],
   imports: [
     AppRoutingModule,
