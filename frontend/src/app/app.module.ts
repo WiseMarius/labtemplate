@@ -20,6 +20,11 @@ import { HomeComponent } from './components';
 //Ng-bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+//Modal gallery
+import 'hammerjs';
+import 'mousetrap';
+import { ModalGalleryModule } from 'angular-modal-gallery';
+
 // used to create fake backend
 import { fakeBackendProvider } from './service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -35,6 +40,18 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LoginButtonComponent } from './components/layouts/login-button/login-button.component';
 import { RegisterButtonComponent } from './components/layouts/register-button/register-button.component';
 import { LoginNotificationComponent } from './components/layouts/login-notification/login-notification.component';
+import { HomeTabComponent } from './components/layouts/home-tab/home-tab.component';
+import { HeaderComponent } from './components/layouts/header/header.component';
+import { MenuComponent } from './components/layouts/menu/menu.component';
+import { HighestRatedComponent } from './components/layouts/highest-rated/highest-rated.component';
+import { UserMomentsComponent } from './components/pages/user-moments/user-moments.component';
+import { MomentsTabComponent } from './components/layouts/moments-tab/moments-tab.component';
+import { PhotosTabComponent } from './components/layouts/photos-tab/photos-tab.component';
+import { FriendsTabComponent } from './components/layouts/friends-tab/friends-tab.component';
+import { RatedTabComponent } from './components/layouts/rated-tab/rated-tab.component';
+import { UserPhotosComponent } from './components/pages/user-photos/user-photos.component';
+import { UserRatedComponent } from './components/pages/user-rated/user-rated.component';
+import { UserFriendsComponent } from './components/pages/user-friends/user-friends.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +62,19 @@ import { LoginNotificationComponent } from './components/layouts/login-notificat
     FooterComponent,
     LoginButtonComponent,
     RegisterButtonComponent,
-    LoginNotificationComponent
+    LoginNotificationComponent,
+    HomeTabComponent,
+    HeaderComponent,
+    MenuComponent,
+    HighestRatedComponent,
+    UserMomentsComponent,
+    MomentsTabComponent,
+    PhotosTabComponent,
+    FriendsTabComponent,
+    RatedTabComponent,
+    UserPhotosComponent,
+    UserRatedComponent,
+    UserFriendsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -65,7 +94,8 @@ import { LoginNotificationComponent } from './components/layouts/login-notificat
     InputTextModule,
     ContextMenuModule,
     DialogModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ModalGalleryModule.forRoot()
   ],
   providers: [
     AppRoutingModule,
