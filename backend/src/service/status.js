@@ -1,7 +1,7 @@
 "use strict";
 
 const status = require('../models').status;
-const user=require('../models').user;
+const user = require('../models').user;
 
 exports.list = function (req, res) {
   status.findAll().then(status => {
@@ -11,6 +11,16 @@ exports.list = function (req, res) {
 
 exports.create = function (req, res) {
   res.jsonp(status.create(req.body));
+};
+
+exports.getStatusAndUsers = function (req, res) {
+  console.log("haha");
+  status.findAll({
+    attributes: ['status', 'rating'],
+    include: [{ model: user, attributes:['name', 'surname']}]
+  }).then(status=>{
+    res.jsonp(status);
+  })
 };
 
 exports.findById = function (req, res) {
