@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 import { Observable } from 'rxjs/Observable';
@@ -9,7 +10,8 @@ import 'rxjs/add/operator/delay';
 @Component({
   selector: 'app-photos-tab',
   templateUrl: './photos-tab.component.html',
-  styleUrls: ['./photos-tab.component.less']
+  styleUrls: ['./photos-tab.component.less'],
+  providers: [NgbRatingConfig] // add NgbRatingConfig to the component providers
 })
 export class PhotosTabComponent implements OnInit {
 
@@ -72,6 +74,14 @@ export class PhotosTabComponent implements OnInit {
 
   // observable of an array of images with a delay to simulate a network request
   images: Observable<Array<Image>> = Observable.of(this.imagesArray).delay(300);
+  currentRate = 3.90;
+
+  constructor(config: NgbRatingConfig) {
+    // customize default values of ratings used by this component tree
+    config.max = 5;
+    config.readonly = true;
+  }
+
 
   // array with a single image inside (the first one)
   singleImage: Observable<Array<Image>> = Observable.of([
