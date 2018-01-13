@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   status.associate = (models) => {
-    //status.BelongsTo(models.user, { foreignKey: 'uid' });
+    status.belongsTo(models.user, { foreignKey: 'uid' });
   }
 
   return status;
