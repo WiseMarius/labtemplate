@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../../../service/login.service'
-import {Subscription} from 'rxjs/Subscription'
+import { Subscription } from 'rxjs/Subscription'
 
 @Component({
   selector: 'app-header',
@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   //{{user.name}} {{user.surname}}
 
   user: string;
+  id: number;
 
   ngOnInit() {
     console.log("NGONINIT2")
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
       this.user = user;
       console.log(this.data.currentFullName);
     });
+    this.data.currentId.subscribe(id => { this.id = id; })
     console.log(this.user);
   }
 
@@ -31,7 +33,7 @@ interface User {
   username: string;
   password: string;
   email: string;
-  name:string;
-  surname:string;
+  name: string;
+  surname: string;
 }
 

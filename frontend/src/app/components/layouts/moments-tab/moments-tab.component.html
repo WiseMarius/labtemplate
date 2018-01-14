@@ -1,30 +1,10 @@
 <ngb-carousel>
-    <ng-template ngbSlide>
-        <img src="../../../../assets/images/lacie-moments-1.jpg" alt="Weeding day...">
+
+    <ng-template ngbSlide *ngFor="let photo of photos; let i = index">
+        <img src="{{photo.photo}}">
         <div class="carousel-caption">
             <h3>Wedding day...</h3>
             <p>Maid of honor at Alice Eve's wedding </p>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <img src="../../../../assets/images/lacie-moments-2.png" alt="Lunch">
-        <div class="carousel-caption">
-            <h3>Lunch</h3>
-            <p>Enjoying lunch</p>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <img src="../../../../assets/images/lacie-moments-3.jpg" alt="Random third slide">
-        <div class="carousel-caption">
-            <h3>Work...</h3>
-            <p>Genius is ninety percent perspiration and ten percent inspiration. </p>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <img src="../../../../assets/images/lacie-moments-4.jpg" alt="Random third slide">
-        <div class="carousel-caption">
-            <h3>Just had a shower</h3>
-            <p>Genius is ninety percent perspiration and ten percent inspiration.</p>
         </div>
     </ng-template>
 </ngb-carousel>

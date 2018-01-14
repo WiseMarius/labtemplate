@@ -22,7 +22,8 @@ export class PhotosTabComponent implements OnInit {
   openModalWindowObservable: boolean = false;
   imagePointerObservable: number = 0;
 
-  photos: Photo[]=[];
+  photos: string[]=[];
+
 
   imagesArray: Array<Image> = [];
 
@@ -79,9 +80,8 @@ export class PhotosTabComponent implements OnInit {
       for (var i=0;i<res.length;i++)
       {
         console.log(res[i]);
-        let p:Photo={photo:new Image(res[i].photo, null, null, 'http://www.google.com'), name:res[i].user.name, surname:res[i].user.surname, rating:res[i].rating};
-        this.imagesArray.push(p.photo);
-        this.photos.push(p);
+        this.imagesArray.push();
+        this.photos.push(res[i].photo);
       }
       console.log(this.photos);
       console.log(this.imagesArray);

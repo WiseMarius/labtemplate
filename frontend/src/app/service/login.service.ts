@@ -8,9 +8,13 @@ export class LoginService {
     fullNameSource = new BehaviorSubject<string>('default user');
     currentFullName = this.fullNameSource.asObservable();
 
-    changeMessage(user: string) {
+    idSource= new BehaviorSubject<number>(-1);
+    currentId=this.idSource.asObservable();
+
+    changeUser(user: string, id:number) {
         console.log("CHANGEMESSAGE");
         this.fullNameSource.next(user)
+        this.idSource.next(id);
         console.log(user);
         console.log(this.currentFullName);
     }

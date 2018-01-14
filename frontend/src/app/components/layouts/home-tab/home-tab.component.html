@@ -5,8 +5,9 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: #f4e9e9"></textarea>
         </div>
         <div style="display: flex; justify-content: space-between;">
-            <button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event">Express your feelings with an image</button>
-            <button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event">Upload your thoughts</button>
+            <!--<button class="btn btn-info" type="button" ngFilePicker [ngFilePicker]="binaryString" accept="image/*" (filePick)="file = $event">Express your feelings with an image</button> -->
+            <button class="btn btn-info" type="button" (click)="uploadStatus(textArea.value)">Upload your thoughts</button>
+            <input type="file" accept="image/*" (change)="changeListener($event)">
         </div>
         <hr>
     </div>

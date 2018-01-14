@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // UI
 import { SuiModule } from 'ng2-semantic-ui';
-import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { DataTableModule, SharedModule, FileUploadModule } from 'primeng/primeng';
 
 // Services
 import { ApiService, LoginService } from './service';
@@ -55,6 +55,7 @@ import { RatedTabComponent } from './components/layouts/rated-tab/rated-tab.comp
 import { UserPhotosComponent } from './components/pages/user-photos/user-photos.component';
 import { UserRatedComponent } from './components/pages/user-rated/user-rated.component';
 import { UserFriendsComponent } from './components/pages/user-friends/user-friends.component';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { UserFriendsComponent } from './components/pages/user-friends/user-frien
     RatedTabComponent,
     UserPhotosComponent,
     UserRatedComponent,
-    UserFriendsComponent
+    UserFriendsComponent,
+    FileSelectDirective,
   ],
   imports: [
     AppRoutingModule,
@@ -104,6 +106,7 @@ import { UserFriendsComponent } from './components/pages/user-friends/user-frien
     FormsModule,
     HttpModule,
     AngularFilePickerModule
+    
   ],
   providers: [
     AppRoutingModule,

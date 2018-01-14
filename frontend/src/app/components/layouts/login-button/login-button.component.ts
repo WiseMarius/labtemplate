@@ -19,27 +19,24 @@ export class LoginButtonComponent implements OnInit {
   closeResult: string;
 
   name: string;
+  id: number;
   constructor(private apiService: ApiService, private modalService: NgbModal, private route: Router, private data: LoginService) {
 
   }
   ngOnInit() {
-    console.log("NGONINIT");
     this.data.currentFullName.subscribe(user => {
       this.name = user;
     });
+    this.data.currentId.subscribe(id => { this.id = id });
   }
 
 
   login(loginUsername, loginPassword) {
     this.apiService.get('api/user/username_password/' + loginUsername + '&' + loginPassword).subscribe(res => {
-      console.log("LOGIN");
-     console.log(res);
-      this.name = res.name+ ' '+ res.surname;
-      console.log(this.name);
-      this.data.changeMessage(this.name);
+      this.name = res.name + ' ' + res.surname;
+      this.data.changeUser(this.name, res.id);
       if (res != '404')
         this.route.navigateByUrl('/user-profile');
-      console.log("haha");
     });
   }
 
