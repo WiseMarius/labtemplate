@@ -1,0 +1,13 @@
+<p>
+    <button type="button" class="btn btn-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Profile image settings
+  </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            <p>Chose your profile picture</p>
+            <button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event">Choose image</button>
+        </div>
+    </div>
+</div>

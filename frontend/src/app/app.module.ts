@@ -51,10 +51,13 @@ import { UserMomentsComponent } from './components/pages/user-moments/user-momen
 import { MomentsTabComponent } from './components/layouts/moments-tab/moments-tab.component';
 import { PhotosTabComponent } from './components/layouts/photos-tab/photos-tab.component';
 import { FriendsTabComponent } from './components/layouts/friends-tab/friends-tab.component';
-import { RatedTabComponent } from './components/layouts/rated-tab/rated-tab.component';
 import { UserPhotosComponent } from './components/pages/user-photos/user-photos.component';
-import { UserRatedComponent } from './components/pages/user-rated/user-rated.component';
+import { UserSettingsComponent } from './components/pages/user-settings/user-settings.component';
 import { UserFriendsComponent } from './components/pages/user-friends/user-friends.component';
+import { SettingsTabComponent } from './components/layouts/settings-tab/settings-tab.component';
+import { SocialMediaSettingsComponent } from './components/layouts/social-media-settings/social-media-settings.component';
+import { ProfileImageSettingsComponent } from './components/layouts/profile-image-settings/profile-image-settings.component';
+import { StatusSettingsComponent } from './components/layouts/status-settings/status-settings.component';
 
 
 @NgModule({
@@ -75,10 +78,13 @@ import { UserFriendsComponent } from './components/pages/user-friends/user-frien
     MomentsTabComponent,
     PhotosTabComponent,
     FriendsTabComponent,
-    RatedTabComponent,
     UserPhotosComponent,
-    UserRatedComponent,
-    UserFriendsComponent
+    UserSettingsComponent,
+    UserFriendsComponent,
+    SettingsTabComponent,
+    SocialMediaSettingsComponent,
+    ProfileImageSettingsComponent,
+    StatusSettingsComponent
   ],
   imports: [
     AppRoutingModule,

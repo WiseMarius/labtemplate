@@ -1,0 +1,21 @@
+<p>
+    <button type="button" class="btn btn-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Social media settings
+  </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group" style="display: inline;">
+                <a class="btn btn-default"><i class="fa fa-facebook"></i></a>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default"><i class="fa fa-instagram"></i></a>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default"><i class="fa fa-twitter"></i></a>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default"><i class="fa fa-google-plus"></i></a>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

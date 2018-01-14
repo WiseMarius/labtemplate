@@ -1,7 +1,6 @@
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent, UserComponent, UserProfileComponent, UserMomentsComponent, UserPhotosComponent, UserRatedComponent, UserFriendsComponent } from './components';
+import { HomeComponent, UserComponent, UserProfileComponent, UserMomentsComponent, UserPhotosComponent, UserSettingsComponent, UserFriendsComponent } from './components';
 const routes: Routes = [
   { path: '', redirectTo: 'user', pathMatch: 'full' },
   {
@@ -20,7 +19,7 @@ const routes: Routes = [
     path: 'user-photos', component: UserPhotosComponent
   },
   {
-    path: 'user-rated', component: UserRatedComponent
+    path: 'user-settings', component: UserSettingsComponent
   },
   {
     path: 'user-friends', component: UserFriendsComponent

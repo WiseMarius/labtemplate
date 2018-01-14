@@ -1,0 +1,21 @@
+<p>
+    <button type="button" class="btn btn-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Status settings
+  </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            <span class="btn btn-default">Relationship</span>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div class="card-body">
+            <span class="btn btn-default">Location</span>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div class="card-body">
+            <span class="btn btn-default">Work</span>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+</div>
