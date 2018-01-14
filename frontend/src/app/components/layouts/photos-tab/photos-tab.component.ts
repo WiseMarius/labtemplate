@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
-import { ApiService } from '../../../service/index';
 
 @Component({
   selector: 'app-photos-tab',
@@ -22,16 +21,62 @@ export class PhotosTabComponent implements OnInit {
   openModalWindowObservable: boolean = false;
   imagePointerObservable: number = 0;
 
-  photos: string[]=[];
-
-
-  imagesArray: Array<Image> = [];
+  imagesArray: Array<Image> = [
+    new Image(
+      '../../../../assets/images/oval.gif',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/capuccino.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/lacie-moments-1.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/lacie-moments-2.png',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/lacie-moments-3.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/lacie-moments-4.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/oval.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+    new Image(
+      '../../../../assets/images/bg.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),
+  ];
 
   // observable of an array of images with a delay to simulate a network request
   images: Observable<Array<Image>> = Observable.of(this.imagesArray).delay(300);
-  //currentRate = 3.90;
+  currentRate = 3.90;
 
-  constructor(config: NgbRatingConfig, private apiService: ApiService) {
+  constructor(config: NgbRatingConfig) {
     // customize default values of ratings used by this component tree
     config.max = 5;
     config.readonly = true;
@@ -76,26 +121,14 @@ export class PhotosTabComponent implements OnInit {
     this.imagesArraySubscription = Observable.of(null).delay(500).subscribe(() => {
       this.imagesArraySubscribed = this.imagesArray;
     });
-    this.apiService.get('api/photo/users/all').subscribe(res => {
-      for (var i=0;i<res.length;i++)
-      {
-        console.log(res[i]);
-        this.imagesArray.push();
-        this.photos.push(res[i].photo);
-      }
-      console.log(this.photos);
-      console.log(this.imagesArray);
-    });
   }
 
   openImageModal(image: Image) {
-    console.log("aaaaaaaa");
     this.imagePointer = this.imagesArray.indexOf(image);
     this.openModalWindow = true;
   }
 
   openImageModalObservable(image: Image) {
-    console.log("aaaaaaaa");
     this.subscription = this.images.subscribe((val: Image[]) => {
       this.imagePointerObservable = val.indexOf(image);
       this.openModalWindowObservable = true;
@@ -139,16 +172,9 @@ export class PhotosTabComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-    if (this.imagesArraySubscription) {
+    if(this.imagesArraySubscription) {
       this.imagesArraySubscription.unsubscribe();
     }
   }
 
-}
-
-interface Photo {
-  photo: Image;
-  name: string;
-  surname: string;
-  rating: number;
 }
