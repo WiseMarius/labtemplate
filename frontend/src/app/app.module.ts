@@ -60,6 +60,8 @@ import { SocialMediaSettingsComponent } from './components/layouts/social-media-
 import { ProfileImageSettingsComponent } from './components/layouts/profile-image-settings/profile-image-settings.component';
 import { StatusSettingsComponent } from './components/layouts/status-settings/status-settings.component';
 
+import {CookieService} from 'angular2-cookie/services/cookies.service'
+
 
 @NgModule({
   declarations: [
@@ -112,13 +114,14 @@ import { StatusSettingsComponent } from './components/layouts/status-settings/st
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFilePickerModule
+    AngularFilePickerModule,
     
   ],
   providers: [
     AppRoutingModule,
     ApiService,
     LoginService,
+    CookieService
     // providers used to create fake backend
     // fakeBackendProvider,
     // MockBackend,

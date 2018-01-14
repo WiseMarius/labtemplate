@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../../../service/login.service'
 import { Subscription } from 'rxjs/Subscription'
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,9 @@ import { Subscription } from 'rxjs/Subscription'
   styleUrls: ['./header.component.less'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private data: LoginService) {
+  constructor(private data: LoginService, private _cookieService:CookieService) {
 
   }
-  //{{user.name}} {{user.surname}}
 
   user: string;
   id: number;
@@ -25,6 +25,12 @@ export class HeaderComponent implements OnInit {
     });
     this.data.currentId.subscribe(id => { this.id = id; })
     console.log(this.user);
+    console.log('cooookieeeeeeee');
+    console.log(this._cookieService.get('test'));
+    var str=this._cookieService.get('test');
+    var strList=str.split(" ");
+    this.user=strList[0]+' '+strList[1];
+    this.id=Number(strList[2]);
   }
 
 }

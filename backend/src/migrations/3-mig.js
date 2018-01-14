@@ -30,40 +30,44 @@ module.exports = {
         type: Sequelize.STRING
       },
       facebook: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       instagram: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       twitter: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       google: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       relationship: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       living: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       living: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       working: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       photo: {
-        allowNull: false,
-        type: Sequelize.STRING
+        allowNull: true,
+        type: Sequelize.TEXT
+      },
+      primeUser:{
+          allowNull:true,
+          type:Sequelize.BOOL
       },
       createdAt: {
         allowNull: false,

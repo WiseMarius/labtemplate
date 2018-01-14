@@ -9,6 +9,8 @@ import { Location } from '@angular/common'
 import { LoginService } from '../../../service/login.service'
 import { Subscription } from 'rxjs/Subscription'
 
+import {CookieService} from 'angular2-cookie/core'
+
 
 @Component({
   selector: 'login-button',
@@ -20,7 +22,7 @@ export class LoginButtonComponent implements OnInit {
 
   name: string;
   id: number;
-  constructor(private apiService: ApiService, private modalService: NgbModal, private route: Router, private data: LoginService) {
+  constructor(private apiService: ApiService, private modalService: NgbModal, private route: Router, private data: LoginService, private _cookieService:CookieService) {
 
   }
   ngOnInit() {
@@ -37,6 +39,8 @@ export class LoginButtonComponent implements OnInit {
       this.data.changeUser(this.name, res.id);
       if (res != '404')
         this.route.navigateByUrl('/user-profile');
+        this._cookieService.put('test', this.name+ ' '+res.id);
+        console.log(this._cookieService.get('test'));
     });
   }
 

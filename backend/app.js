@@ -7,8 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var cors = require('cors')
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' });
 
 // Init
 var app = express();
@@ -18,13 +16,13 @@ app.listen(8000);
 app.use(helmet());
 app.use(cors());
 
+
 // Config
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb', extended: true }));
 app.use(cookieParser());
-
 
 // Controllers
 var index = require('./src/rest/index');

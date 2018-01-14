@@ -5,7 +5,15 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     name: DataTypes.STRING,
     surname: DataTypes.STRING,
-    email: DataTypes.STRING
+    email: DataTypes.STRING,
+    facebook: DataTypes.STRING,
+    instagram: DataTypes.STRING,
+    twitter: DataTypes.STRING,
+    google: DataTypes.STRING,
+    relationship: DataTypes.STRING,
+    living: DataTypes.STRING,
+    working: DataTypes.STRING,
+    photo: DataTypes.STRING,
   });
   user.associate = (models) => {
     user.hasMany(models.status, { foreignKey: 'uid' });
