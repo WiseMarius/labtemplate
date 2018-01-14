@@ -10,7 +10,7 @@ import { SuiModule } from 'ng2-semantic-ui';
 import { DataTableModule, SharedModule } from 'primeng/primeng';
 
 // Services
-import { ApiService } from './service';
+import { ApiService, LoginService } from './service';
 import { AppRoutingModule } from './app-routing.module';
 
 // Components
@@ -55,6 +55,7 @@ import { RatedTabComponent } from './components/layouts/rated-tab/rated-tab.comp
 import { UserPhotosComponent } from './components/pages/user-photos/user-photos.component';
 import { UserRatedComponent } from './components/pages/user-rated/user-rated.component';
 import { UserFriendsComponent } from './components/pages/user-friends/user-friends.component';
+
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { UserFriendsComponent } from './components/pages/user-friends/user-frien
   providers: [
     AppRoutingModule,
     ApiService,
+    LoginService,
     // providers used to create fake backend
     // fakeBackendProvider,
     // MockBackend,

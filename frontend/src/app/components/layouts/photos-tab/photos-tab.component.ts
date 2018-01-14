@@ -28,7 +28,7 @@ export class PhotosTabComponent implements OnInit {
 
   // observable of an array of images with a delay to simulate a network request
   images: Observable<Array<Image>> = Observable.of(this.imagesArray).delay(300);
-  currentRate = 3.90;
+  //currentRate = 3.90;
 
   constructor(config: NgbRatingConfig, private apiService: ApiService) {
     // customize default values of ratings used by this component tree
@@ -80,7 +80,7 @@ export class PhotosTabComponent implements OnInit {
       {
         console.log(res[i]);
         let p:Photo={photo:new Image(res[i].photo, null, null, 'http://www.google.com'), name:res[i].user.name, surname:res[i].user.surname, rating:res[i].rating};
-        this.imagesArray[i]=p.photo;
+        this.imagesArray.push(p.photo);
         this.photos.push(p);
       }
       console.log(this.photos);
@@ -89,11 +89,13 @@ export class PhotosTabComponent implements OnInit {
   }
 
   openImageModal(image: Image) {
+    console.log("aaaaaaaa");
     this.imagePointer = this.imagesArray.indexOf(image);
     this.openModalWindow = true;
   }
 
   openImageModalObservable(image: Image) {
+    console.log("aaaaaaaa");
     this.subscription = this.images.subscribe((val: Image[]) => {
       this.imagePointerObservable = val.indexOf(image);
       this.openModalWindowObservable = true;

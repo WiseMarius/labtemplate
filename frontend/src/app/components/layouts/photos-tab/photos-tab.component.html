@@ -1,5 +1,5 @@
 <div class="image-table">
-    <div *ngFor="let img of photos; let i = index" style="display: inline; padding: auto; margin: auto">
+    <div *ngFor="let img of photos; let i = index;" style="display: inline; padding: auto; margin: auto">
         <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Uploaded by: {{img.name}} {{img.surname}}">
             <img *ngIf="img.thumb" class="list-img" src="{{img.photo.thumb}}" (click)="openImageModal(img.photo)" alt='{{img.photo.description}}'
             />
