@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     living: DataTypes.STRING,
     working: DataTypes.STRING,
     photo: DataTypes.STRING,
+    primeUser: DataTypes.BOOLEAN
   });
   user.associate = (models) => {
     user.hasMany(models.status, { foreignKey: 'uid' });

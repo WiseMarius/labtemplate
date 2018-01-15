@@ -16,6 +16,7 @@ exports.create = function (req, res) {
 exports.findById = function (req, res) {
   console.log("aaaa");
   let id = req.params.id;
+  console.log(req);
   console.log(id);
   user.findById(id).then(user => {
     if (!user) {
@@ -46,8 +47,9 @@ exports.findByUsernameAndPassword = function (req, res) {
   let username = req.params.username;
   let password = req.params.password;
   user.findOne({
-    attributes:['id', 'username', 'password', 'email','name', 'surname'],
-     where: { username: username, password: password } }).then(user => {
+    attributes: ['id', 'username', 'password', 'email', 'name', 'surname'],
+    where: { username: username, password: password }
+  }).then(user => {
     console.log(user);
     if (!user) {
       return res.status(400).send({
@@ -107,7 +109,16 @@ exports.delete = function (req, res) {
     .catch(error => res.status(400).send(error));
 };
 
-exports.update = function (res, req) {
-  let id = req.params.id;
-  console.log(id);
+exports.update = function (req, res) {
+  console.log("update")
+  return user.findById(req.params.id).then(user => {
+    console.log(user);
+    if(!user){
+      return res.status(404).send({
+        message:'User not found'
+      })
+    }
+      user.update(req.body);
+      res.jsonp(user);
+  });
 };

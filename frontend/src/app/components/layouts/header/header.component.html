@@ -1,31 +1,42 @@
 <div class="row">
     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
         <!-- INSERT IMAGE HERE -->
-        <img src="../../../../assets/images/oval.jpg" class="profile">
+        <img src={{user.photo}} class="profile">
     </div>
     <!-- Name, tagline, score -->
     <div class="col-xl-7 col-lg-6 col-md-7 col-sm-8">
         <div class="xsm-header">
-            <h1>{{user}}</h1>
+            <h1>{{user.name}} {{user.surname}}</h1>
             <div class="rating-label">
                 <p class="rating-tag">4.63</p>
-                <div class="prime-tag">
+                <div class="prime-tag" *ngIf="user.primeUser==true">
                     <p style="margin: 0px; font-size: 10px; letter-spacing: 3px; font-weight: bold">PRIME</p>
                     <p style="font-size: 16px;">USER</p>
                 </div>
             </div>
-            <a class="btn btn-default" href="#"><i class="fa fa-facebook"></i></a>
-            <a class="btn btn-default" href="#"><i class="fa fa-instagram"></i></a>
-            <a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a>
-            <a class="btn btn-default" href="#"><i class="fa fa-google-plus"></i></a>
+            <a class="btn btn-default" href="{{user.facebook}}">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a class="btn btn-default" href="{{user.instagram}}">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a class="btn btn-default" href="{{user.twitter}}">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="btn btn-default" href="{{user.google}}#">
+                <i class="fa fa-google-plus"></i>
+            </a>
         </div>
     </div>
 
     <!--Top right column-->
     <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12">
         <br>
-        <a class="btn btn-default" href="#">Single</a><br>
-        <a class="btn btn-default" href="#">Lives in Paris</a><br>
-        <a class="btn btn-default" href="#">Currently working at Hodicker</a><br>
+        <a class="btn btn-default">{{user.relationship}}</a>
+        <br>
+        <a class="btn btn-default">Lives in {{user.living}}</a>
+        <br>
+        <a class="btn btn-default">Currently working at {{user.working}}</a>
+        <br>
     </div>
 </div>

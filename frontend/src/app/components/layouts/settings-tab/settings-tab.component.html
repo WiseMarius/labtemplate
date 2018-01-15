@@ -1,7 +1,65 @@
-<app-social-media-settings></app-social-media-settings>
+<p>
+    <button type="button" class="btn btn-info" (click)="isCollapsed1 = !isCollapsed1" [attr.aria-expanded]="!isCollapsed1" aria-controls="collapseExample">
+        Social media settings
+    </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed1">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group" style="display: inline;">
+                <a class="btn btn-default">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <textarea #facebook class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <textarea #instagram class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <textarea #twitter class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <a class="btn btn-default">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <textarea #google class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
 <hr>
-<app-profile-image-settings></app-profile-image-settings>
+<p>
+    <button type="button" class="btn btn-info" (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample">
+        Profile image settings
+    </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed2">
+    <div class="card">
+            <input type="file" accept="image/*" (change)="changeListener($event)">
+    </div>
+</div>
 <hr>
-<app-status-settings></app-status-settings>
+<p>
+
+    <button type="button" class="btn btn-info" (click)="isCollapsed3 = !isCollapsed3" [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample">
+        Status settings
+    </button>
+</p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed3">
+    <div class="card">
+        <div class="card-body">
+            <span class="btn btn-default">Relationship</span>
+            <textarea #relationship class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div class="card-body">
+            <span class="btn btn-default">Location</span>
+            <textarea #location class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div class="card-body">
+            <span class="btn btn-default">Work</span>
+            <textarea #work class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+</div>
 <hr>
-<button class="btn btn-info" type="button" ngFilePicker accept="image/*" (filePick)="file = $event" style="float: right;">Save settings</button>
+<button class="btn btn-info" type="button" style="float: right;" (click)="save(facebook.value, instagram.value, twitter.value, google.value, relationship.value, location.value, work.value)">Save settings</button>

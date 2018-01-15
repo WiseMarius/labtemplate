@@ -9,7 +9,8 @@ router.get('/username_password/:username&:password', user.findByUsernameAndPassw
 router.get('/status/:username', user.getStatusesByUsername);
 router.get('/friends/:username', user.getFriends);
 router.post('/', user.create);
-router.put('/:id', user.update);
+//router.put('/users/:idd', user.update);
 router.delete('/:id', user.delete);
+router.patch('/:id', user.update);
 
 module.exports = router;

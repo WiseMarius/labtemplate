@@ -2,7 +2,7 @@
     <div class="col-md-12 ">
         <div class="form-group">
             <h5>How do you feel today?</h5>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: #f4e9e9"></textarea>
+            <textarea #textArea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: #f4e9e9" maxlength="255"></textarea>
         </div>
         <div style="display: flex; justify-content: space-between;">
             <!--<button class="btn btn-info" type="button" ngFilePicker [ngFilePicker]="binaryString" accept="image/*" (filePick)="file = $event">Express your feelings with an image</button> -->
@@ -21,7 +21,7 @@
                 <h3>
                     <a>{{s.user.name}} {{s.user.surname}}</a>
                 </h3>
-                <h6>{{s.rating}}</h6>
+                <h4>{{s.rating}} ♥</h4>
                 <p>{{s.status}}</p>
             </li>
         </ul>

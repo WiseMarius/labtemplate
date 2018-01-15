@@ -10,6 +10,7 @@ exports.list = function (req, res) {
 };
 
 exports.create = function (req, res) {
+  console.log('hah');
   res.jsonp(status.create(req.body));
 };
 

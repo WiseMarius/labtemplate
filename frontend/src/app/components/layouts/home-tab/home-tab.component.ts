@@ -2,6 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { ApiService, LoginService } from '../../../service/index';
 import { AngularFilePickerModule } from 'angular-file-picker';
 import { FilePickerDirective } from 'angular-file-picker/file-picker.directive';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-home-tab',
@@ -10,7 +11,7 @@ import { FilePickerDirective } from 'angular-file-picker/file-picker.directive';
 })
 export class HomeTabComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private login: LoginService) { }
+  constructor(private _cookieService:CookieService, private apiService: ApiService, private login: LoginService) { }
 
   statuses: Status[];
 
@@ -29,6 +30,10 @@ export class HomeTabComponent implements OnInit {
     this.getStatuses();
     this.login.currentId.subscribe(id => { this.id = id; });
     console.log('aaaaaaaa' + this.id);
+
+    var str=this._cookieService.get('test');
+    var strs=str.split(" ");
+    this.id=Number(strs[2]);
   }
 
   changeListener($event): void {
