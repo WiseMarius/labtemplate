@@ -56,10 +56,6 @@ import { UserSettingsComponent } from './components/pages/user-settings/user-set
 import { UserFriendsComponent } from './components/pages/user-friends/user-friends.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { SettingsTabComponent } from './components/layouts/settings-tab/settings-tab.component';
-import { SocialMediaSettingsComponent } from './components/layouts/social-media-settings/social-media-settings.component';
-import { ProfileImageSettingsComponent } from './components/layouts/profile-image-settings/profile-image-settings.component';
-import { StatusSettingsComponent } from './components/layouts/status-settings/status-settings.component';
-
 import {CookieService} from 'angular2-cookie/services/cookies.service'
 
 
@@ -86,10 +82,7 @@ import {CookieService} from 'angular2-cookie/services/cookies.service'
     FileSelectDirective,
     UserSettingsComponent,
     UserFriendsComponent,
-    SettingsTabComponent,
-    SocialMediaSettingsComponent,
-    ProfileImageSettingsComponent,
-    StatusSettingsComponent
+    SettingsTabComponent
   ],
   imports: [
     AppRoutingModule,
