@@ -74,8 +74,6 @@ export class PhotosTabComponent implements OnInit {
 
   // observable of an array of images with a delay to simulate a network request
   images: Observable<Array<Image>> = Observable.of(this.imagesArray).delay(300);
-
-  rates=[1,2,0.5,4,3.1,2.9,3.1,4.9];
   currentRate = 3.90;
 
   constructor(config: NgbRatingConfig) {
