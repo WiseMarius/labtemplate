@@ -4,10 +4,10 @@
             <h5>How do you feel today?</h5>
             <textarea #textArea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: #f4e9e9" maxlength="255"></textarea>
         </div>
-        <div style="display: flex; justify-content: space-between;">
-            <!--<button class="btn btn-info" type="button" ngFilePicker [ngFilePicker]="binaryString" accept="image/*" (filePick)="file = $event">Express your feelings with an image</button> -->
+        <div class="feelings">
+            <input type="file" accept="image/*" (change)="changeListener($event)" id="file-1">
+            <label class="btn btn-info" for="file-1">Express your feelings with an image</label>
             <button class="btn btn-info" type="button" (click)="uploadStatus(textArea.value)">Upload your thoughts</button>
-            <input type="file" accept="image/*" (change)="changeListener($event)">
         </div>
         <hr>
     </div>
